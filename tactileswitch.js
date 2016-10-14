@@ -27,7 +27,8 @@
  --	        39	40	GPIO
  * */
 
-var gpio = require("pi-gpio");
+let gpio = require("pi-gpio");
+let targetPin = 40;
 
 gpio.open(targetPin, "in", (error) => {
         if (error) {
