@@ -33,15 +33,15 @@ let gpio = require("pi-gpio");
 let targetPin = 40;
 
 
-gpio.open(targetPin, "input pullup", (error) => {
+gpio.open(targetPin, "input", (error) => {
         if (error) {
-            console.log('Target pin already opened');
+            console.log(error);
         }
 
         setInterval(function () {
             gpio.read(targetPin, (error, value) => {
                     if (error) {
-                        console.log('error: ', error);
+                        console.log(error);
                     }
                     console.log("current state: ", value);
                 }
