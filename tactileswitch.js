@@ -29,24 +29,19 @@
 
 var gpio = require("pi-gpio");
 
-var getValue = function (targetPin) {
-    gpio.open(targetPin, "in", (error) => {
-            if (error) {
-                console.log('Target pin already opened');
-            }
+gpio.open(targetPin, "in", (error) => {
+        if (error) {
+            console.log('Target pin already opened');
+        }
+        setInterval(function () {
+
             gpio.read(targetPin, (error, value) => {
                     if (error) {
                         console.log('error: ', error);
                     }
-
                     console.log("current state: ", value);
                 }
             );
-        }
-    );
-};
-
-
-setInterval(function () {
-    getValue(22);
-}, 500);
+        }, 500);
+    }
+);
