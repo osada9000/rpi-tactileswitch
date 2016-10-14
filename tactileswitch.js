@@ -36,6 +36,7 @@ setInterval(function () {
     gpio.open(targetPin, "input pullup", (error) => {
             if (error) {
                 console.log('Target pin already opened');
+                gpio.close(targetPin);
             }
 
             gpio.read(targetPin, (error, value) => {
@@ -49,4 +50,4 @@ setInterval(function () {
             );
         }
     );
-}, 500);
+}, 3000);
