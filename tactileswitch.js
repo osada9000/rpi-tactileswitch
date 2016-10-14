@@ -32,7 +32,7 @@
 let gpio = require("pi-gpio");
 let targetPin = 40;
 
-gpio.open(targetPin, "in", (error) => {
+gpio.open(targetPin, "input pullup", (error) => {
         if (error) {
             console.log('Target pin already opened');
         }
