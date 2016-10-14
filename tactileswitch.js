@@ -27,6 +27,8 @@
  --	        39	40	GPIO
  * */
 
+'use strict';
+
 let gpio = require("pi-gpio");
 let targetPin = 40;
 
