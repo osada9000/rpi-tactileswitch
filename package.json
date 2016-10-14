@@ -1,0 +1,22 @@
+{
+  "name": "rpi-tactileswitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tactileswitch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osada9000/rpi-tactileswitch.git"
+  },
+  "author": "Manabu Osada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osada9000/rpi-tactileswitch/issues"
+  },
+  "homepage": "https://github.com/osada9000/rpi-tactileswitch#readme",
+  "dependencies": {
+    "pi-gpio": "0.0.8"
+  }
+}
