@@ -32,22 +32,21 @@
 let gpio = require("pi-gpio");
 let targetPin = 40;
 
-setInterval(function () {
-    gpio.open(targetPin, "input pullup", (error) => {
-            if (error) {
-                console.log('Target pin already opened');
-                gpio.close(targetPin);
-            }
 
+gpio.open(targetPin, "input pullup", (error) => {
+        if (error) {
+            console.log('Target pin already opened');
+        }
+
+        setInterval(function () {
             gpio.read(targetPin, (error, value) => {
                     if (error) {
                         console.log('error: ', error);
                     }
                     console.log("current state: ", value);
-
-                    gpio.close(targetPin);
                 }
             );
-        }
-    );
-}, 3000);
+        }, 1000);
+    }
+);
+
